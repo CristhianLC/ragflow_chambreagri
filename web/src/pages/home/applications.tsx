@@ -51,10 +51,6 @@ export function Applications() {
         label: 'Search',
         value: 'search',
       },
-      {
-        label: 'Agent',
-        value: 'agent',
-      },
     ];
   }, []);
 

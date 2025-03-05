@@ -48,3 +48,31 @@
     width: 100%;
   }
 }
+
+// View mode styles
+.gridView {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.listView {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  > div {
+    width: 100%;
+  }
+}
+
+.gridItem {
+  flex: 0 0 300px;
+  margin-bottom: 20px;
+}
+
+.listItem {
+  width: 100%;
+  margin-bottom: 10px;
+}

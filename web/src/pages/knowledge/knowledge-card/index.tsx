@@ -15,13 +15,15 @@ import OperateDropdown from '@/components/operate-dropdown';
 import { useTheme } from '@/components/theme-provider';
 import { useDeleteKnowledge } from '@/hooks/knowledge-hooks';
 import { useFetchUserInfo } from '@/hooks/user-setting-hooks';
+import { ViewMode } from '../index';
 import styles from './index.less';
 
 interface IProps {
   item: IKnowledge;
+  viewMode: ViewMode;
 }
 
-const KnowledgeCard = ({ item }: IProps) => {
+const KnowledgeCard = ({ item, viewMode }: IProps) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { data: userInfo } = useFetchUserInfo();
@@ -38,15 +40,23 @@ const KnowledgeCard = ({ item }: IProps) => {
     });
   };
 
+  const isListView = viewMode === ViewMode.List;
+
   return (
     <Badge.Ribbon
       text={item?.nickname}
       color={userInfo?.nickname === item?.nickname ? '#1677ff' : 'pink'}
       className={classNames(styles.ribbon, {
         [styles.hideRibbon]: item.permission !== 'team',
+        [styles.listRibbon]: isListView,
       })}
     >
-      <Card className={styles.card} onClick={handleCardClick}>
+      <Card
+        className={classNames(styles.card, {
+          [styles.listCard]: isListView,
+        })}
+        onClick={handleCardClick}
+      >
         <div className={styles.container}>
           <div className={styles.content}>
             <Avatar size={34} icon={<UserOutlined />} src={item.avatar} />

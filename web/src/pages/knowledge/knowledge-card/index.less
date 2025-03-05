@@ -124,10 +124,115 @@
   }
 }
 
+// List view card styling
+.listCard {
+  width: 100%;
+  min-height: auto;
+  padding: 16px;
+  margin-bottom: 0;
+
+  .container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .titleWrapper {
+    flex: 1;
+    margin-bottom: 0;
+
+    .title {
+      margin-top: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .description {
+      margin-bottom: 0;
+      height: auto;
+      -webkit-line-clamp: 1;
+    }
+  }
+
+  .footer {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    min-width: 200px;
+
+    .footerTop {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.title {
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.88);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.description {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.45);
+  margin-top: 2px;
+  height: 36px;
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.titleWrapper {
+  margin-bottom: 20px;
+}
+
+.titleDark {
+  .title();
+  color: white;
+}
+
+.descriptionDark {
+  .description();
+  color: white;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.footerTop {
+  margin-bottom: 10px;
+}
+
 .hideRibbon {
   display: none !important;
 }
 
 .ribbon {
   top: 4px;
+}
+
+// List view ribbon styling
+.listRibbon {
+  right: -8px;
+  top: 8px;
 }
